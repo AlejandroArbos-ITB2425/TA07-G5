@@ -758,11 +758,6 @@ function getRandomInRange(min, max) {
     return min + Math.random() * (max - min);
 }
 
-// Crear el botón de flecha dinámicamente
-const scrollToTopBtn = document.createElement('div');
-scrollToTopBtn.innerHTML = '⬆';
-scrollToTopBtn.id = 'scrollToTop';
-document.body.appendChild(scrollToTopBtn);
 
 // Estilos dinámicos con JavaScript
 const style = document.createElement('style');
