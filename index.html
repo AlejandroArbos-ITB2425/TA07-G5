@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora d'Estalvi Energètic - ITB</title>
+    <title>TA07 - G5 - Calculadora de Ahorro Energético MDS</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -12,171 +12,170 @@
 <body>
     <header>
         <div class="logo-container">
-            <img src="assets/logoitb.png" alt="Logo ITB" class="logo">
-            <h1>Calculadora d'Estalvi Energètic</h1>
+            <h1>Calculadora de Ahorro Energético</h1>
         </div>
         <nav>
             <ul>
                 <li><a href="#dashboard">Panel</a></li>
                 <li><a href="#calculadora">Calculadora</a></li>
-                <li><a href="#reduccio">Propostes de Reducció</a></li>
+                <li><a href="#reduccio">Propuestas de Reducción</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section id="dashboard" class="section">
-            <h2>Panel de Consum</h2>
+            <h2>Panel de Consumo</h2>
             <div class="dashboard-controls">
                 <div class="date-selector">
-                    <label for="date-range">Selecciona un període:</label>
+                    <label for="date-range">Selecciona un periodo:</label>
                     <select id="date-range">
-                        <option value="month">Últim mes</option>
-                        <option value="trimester">Últim trimestre</option>
-                        <option value="year" selected>Últim any</option>
-                        <option value="course">Curs escolar (Set-Jun)</option>
+                        <option value="month">Último mes</option>
+                        <option value="trimester">Último trimestre</option>
+                        <option value="year" selected>Último año</option>
+                        <option value="course">Curso escolar (Set-Jun)</option>
                     </select>
                 </div>
                 <button id="export-pdf">Exportar a PDF</button>
             </div>
             <div class="dashboard-grid">
                 <div class="dashboard-card">
-                    <h3>Consum Elèctric</h3>
+                    <h3>Consumo Eléctrico</h3>
                     <div class="chart-container">
                         <canvas id="electricChart"></canvas>
                     </div>
                     <div class="stats">
-                        <p>Consum total: <span id="electric-total"></span> kWh</p>
-                        <p>Mitjana mensual: <span id="electric-avg"></span> kWh</p>
+                        <p>Consumo total: <span id="electric-total"></span> kWh</p>
+                        <p>Media mensual: <span id="electric-avg"></span> kWh</p>
                     </div>
                 </div>
                 <div class="dashboard-card">
-                    <h3>Consum d'Aigua</h3>
+                    <h3>Consumo de Agua</h3>
                     <div class="chart-container">
                         <canvas id="waterChart"></canvas>
                     </div>
                     <div class="stats">
-                        <p>Consum total: <span id="water-total"></span> m³</p>
-                        <p>Mitjana mensual: <span id="water-avg"></span> m³</p>
+                        <p>Consumo total: <span id="water-total"></span> m³</p>
+                        <p>Media mensual: <span id="water-avg"></span> m³</p>
                     </div>
                 </div>
                 <div class="dashboard-card">
-                    <h3>Consumibles d'Oficina</h3>
+                    <h3>Consumibles de Oficina</h3>
                     <div class="chart-container">
                         <canvas id="officeChart"></canvas>
                     </div>
                     <div class="stats">
-                        <p>Despesa total: <span id="office-total"></span> €</p>
-                        <p>Distribució: <span id="office-distribution"></span></p>
+                        <p>Gasto total: <span id="office-total"></span> €</p>
+                        <p>Distribución: <span id="office-distribution"></span></p>
                     </div>
                 </div>
                 <div class="dashboard-card">
-                    <h3>Productes de Neteja</h3>
+                    <h3>Productos de Limpieza</h3>
                     <div class="chart-container">
                         <canvas id="cleaningChart"></canvas>
                     </div>
                     <div class="stats">
-                        <p>Despesa total: <span id="cleaning-total"></span> €</p>
-                        <p>Tendència: <span id="cleaning-trend"></span></p>
+                        <p>Gasto total: <span id="cleaning-total"></span> €</p>
+                        <p>Tendencia: <span id="cleaning-trend"></span></p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="calculadora" class="section">
-            <h2>Calculadora de Prediccions</h2>
+            <h2>Calculadora de Predicciones</h2>
             <div class="calculator-container">
                 <div class="calculator-controls">
                     <div class="period-selector">
-                        <label for="prediction-period">Període de predicció:</label>
+                        <label for="prediction-period">Periodo de predicción:</label>
                         <select id="prediction-period">
-                            <option value="nextYear">Pròxim any</option>
-                            <option value="nextCourse">Pròxim curs (Set-Jun)</option>
-                            <option value="custom">Personalitzat</option>
+                            <option value="nextYear">Próximo año</option>
+                            <option value="nextCourse">Próximo curso (Set-Jun)</option>
+                            <option value="custom">Personalizado</option>
                         </select>
                     </div>
                     <div class="custom-period" id="custom-period-container" style="display: none;">
-                        <label for="start-date">Data d'inici:</label>
+                        <label for="start-date">Fecha de inicio:</label>
                         <input type="date" id="start-date">
-                        <label for="end-date">Data de fi:</label>
+                        <label for="end-date">Fecha de fin:</label>
                         <input type="date" id="end-date">
                     </div>
                     <button id="calculate-btn">Calcular</button>
                 </div>
                 <div class="results-container">
                     <div class="result-card">
-                        <h3>Consum Elèctric</h3>
+                        <h3>Consumo Eléctrico</h3>
                         <p class="result" id="electric-prediction"></p>
-                        <p class="comparison">Comparació amb període actual: <span id="electric-comparison"></span></p>
+                        <p class="comparison">Comparación con período actual:<span id="electric-comparison"></span></p>
                     </div>
                     <div class="result-card">
-                        <h3>Consum d'Aigua</h3>
+                        <h3>Consumo de Agua</h3>
                         <p class="result" id="water-prediction"></p>
-                        <p class="comparison">Comparació amb període actual: <span id="water-comparison"></span></p>
+                        <p class="comparison">Comparación con período actual:<span id="water-comparison"></span></p>
                     </div>
                     <div class="result-card">
-                        <h3>Consumibles d'Oficina</h3>
+                        <h3>Consumibles de Oficina</h3>
                         <p class="result" id="office-prediction"></p>
-                        <p class="comparison">Comparació amb període actual: <span id="office-comparison"></span></p>
+                        <p class="comparison">Comparación con período actual:<span id="office-comparison"></span></p>
                     </div>
                     <div class="result-card">
-                        <h3>Productes de Neteja</h3>
+                        <h3>Productos de Limpieza</h3>
                         <p class="result" id="cleaning-prediction"></p>
-                        <p class="comparison">Comparació amb període actual: <span id="cleaning-comparison"></span></p>
+                        <p class="comparison">Comparación con período actual:<span id="cleaning-comparison"></span></p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="reduccio" class="section">
-            <h2>Propostes de Reducció de Consum</h2>
+            <h2>Propuestas de Reducción de Consumo</h2>
             <div class="reduction-grid">
                 <div class="reduction-card">
-                    <h3>Reducció del Consum Elèctric</h3>
+                    <h3>Reducción del Consumo Eléctrico</h3>
                     <ul>
-                        <li>Instal·lació de sensors de moviment per a il·luminació automàtica</li>
-                        <li>Substitució de lluminàries per models LED d'alta eficiència</li>
+                        <li>Instalación de sensores de movimiento para iluminación automática</li>
+                        <li>Sustitución de luminarias por modelos LED de alta eficiencia</li>
                         <li>Implementació d'un sistema de gestió energètica per a monitoritzar i optimitzar el consum</li>
-                        <li>Conscienciació dels usuaris sobre l'apagada d'equips en finalitzar l'ús</li>
+                        <li>Concienciación de los usuarios sobre el apagado de equipos al finalizar el uso</li>
                     </ul>
                     <div class="savings-estimate">
-                        <p>Estalvi potencial: <span id="electric-savings"></span> kWh/any</p>
+                        <p>Ahorro potencial:<span id="electric-savings"></span> kWh/año</p>
                     </div>
                 </div>
                 <div class="reduction-card">
-                    <h3>Reducció del Consum d'Aigua</h3>
+                    <h3>Reducción del Consumo de Agua</h3>
                     <ul>
-                        <li>Instal·lació d'airejadors en aixetes</li>
-                        <li>Sistemes de doble descàrrega en cisternes</li>
-                        <li>Detecció i reparació de fuites</li>
-                        <li>Recollida d'aigua de pluja per a reg</li>
+                        <li>Instalación de aireadores en grifos</li>
+                        <li>Sistemas de doble descarga en cisternas</li>
+                        <li>Detección y reparación de fugas</li>
+                        <li>Recogida de agua de lluvia para riego</li>
                     </ul>
                     <div class="savings-estimate">
-                        <p>Estalvi potencial: <span id="water-savings"></span> m³/any</p>
+                        <p>Ahorro potencial:<span id="water-savings"></span> m³/año</p>
                     </div>
                 </div>
                 <div class="reduction-card">
-                    <h3>Reducció de Consumibles d'Oficina</h3>
+                    <h3>Reducción de Consumibles de Oficina</h3>
                     <ul>
-                        <li>Implementació de política de "paper zero" fomentant l'ús de documents digitals</li>
-                        <li>Configuració d'impressores per a impressió a doble cara per defecte</li>
-                        <li>Reutilització de materials quan sigui possible</li>
-                        <li>Compra centralitzada de material per evitar compres innecessàries</li>
+                        <li>Implementación de política de "papel cero" fomentando el uso de documentos digitales</li>
+                        <li>Configuración de impresoras para impresión a doble cara por defecto</li>
+                        <li>Reutilización de materiales cuando sea posible</li>
+                        <li>Compra centralizada de material para evitar compras innecesarias</li>
                     </ul>
                     <div class="savings-estimate">
-                        <p>Estalvi potencial: <span id="office-savings"></span> €/any</p>
+                        <p>Ahorro potencial:<span id="office-savings"></span> €/año</p>
                     </div>
                 </div>
                 <div class="reduction-card">
-                    <h3>Reducció de Productes de Neteja</h3>
+                    <h3>Reducción de Productos de Limpieza</h3>
                     <ul>
-                        <li>Ús de productes concentrats que requereixen menys quantitat</li>
+                        <li>Uso de productos concentrados que requieren menor cantidad</li>
                         <li>Implementació de sistemes de dosificació automàtica</li>
-                        <li>Formació del personal de neteja en ús eficient de productes</li>
-                        <li>Ús de productes ecològics multiús</li>
+                        <li>Formación del personal de limpieza en uso eficiente de productos</li>
+                        <li>Uso de productos ecológicos multiuso</li>
                     </ul>
                     <div class="savings-estimate">
-                        <p>Estalvi potencial: <span id="cleaning-savings"></span> €/any</p>
+                        <p>Ahorro potencial: <span id="cleaning-savings"></span> €/año</p>
                     </div>
                 </div>
             </div>
@@ -184,7 +183,7 @@
     </main>
 
     <footer>
-        <p>© 2025 - Calculadora d'Estalvi Energètic - Institut Tecnològic de Barcelona</p>
+        <p>© 2025 - Calculadora de Ahorro Energético - Grupo 5</p>
     </footer>
 
     <script src="scripts/main.js"></script>
