@@ -1,15 +1,17 @@
 /* Global Styles */
 :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #27ae60;
-    --accent-color: #e74c3c;
-    --light-bg: #ecf0f1;
-    --dark-bg: #34495e;
-    --text-color: #333;
-    --light-text: #fff;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --border-radius: 8px;
+    --primary-color: #2d6a4f;  /* Verde principal suave */
+    --secondary-color: #52b788;  /* Verde moderado para elementos secundarios */
+    --accent-color: #84a98c;  /* Verde apagado para acentos */
+    --light-bg: #e4f5e4;  /* Fondo claro con un toque verde muy suave */
+    --dark-bg: #1f3a34;  /* Fondo oscuro con un tono verde más intenso */
+    --text-color: #333;  /* Texto oscuro para legibilidad */
+    --light-text: #fff;  /* Texto blanco para fondos oscuros */
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra suave */
+    --border-radius: 8px;  /* Bordes redondeados */
 }
+
+
 
 * {
     margin: 0;
