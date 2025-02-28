@@ -10,10 +10,8 @@ let processedData = {
 // Constants
 const MONTHS = ['Gener', 'Febrer', 'Març', 'Abril', 'Maig', 'Juny', 'Juliol', 'Agost', 'Setembre', 'Octubre', 'Novembre', 'Desembre'];
 const CHART_COLORS = {
-    electric: 'rgba(255, 99, 132, 0.7)',   // Rojo
+    electric: 'rgba(235, 232, 79, 0.87)',   // Amarillow
     water: 'rgba(54, 162, 235, 0.7)',     // Azul brillante
-    office: 'rgba(161, 138, 79, 0.7)',    // Amarillo
-    cleaning: 'rgba(81, 151, 54, 0.7)'   // Verde agua
 };
 
 
@@ -345,14 +343,14 @@ officeChart = new Chart(ctx, {
         datasets: [{
             data: values,
             backgroundColor: [
-                'rgba(255, 99, 132, 0.7)',  // Rojo
+                'rgba(243, 247, 3, 0.7)',  // Rojo
                 'rgba(54, 162, 235, 0.7)',  // Azul brillante
                 'rgba(255, 206, 86, 0.7)',  // Amarillo
                 'rgba(75, 192, 192, 0.7)'   // Verde agua
             ],
             borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
+                'rgb(235, 252, 2)',
+                'rgb(116, 231, 8)',
                 'rgba(255, 206, 86, 1)',
                 'rgba(75, 192, 192, 1)'
             ],
