@@ -1,0 +1,414 @@
+/* Global Styles */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #27ae60;
+    --accent-color: #e74c3c;
+    --light-bg: #ecf0f1;
+    --dark-bg: #34495e;
+    --text-color: #333;
+    --light-text: #fff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 1rem;
+    box-shadow: var(--shadow);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.logo {
+    height: 60px;
+    margin-right: 1rem;
+}
+
+header h1 {
+    font-size: 1.8rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-right: 1.5rem;
+}
+
+nav ul li a {
+    color: var(--light-text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary-color);
+    transition: width 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Main Content Styles */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.section {
+    margin-bottom: 3rem;
+    background-color: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--secondary-color);
+}
+
+/* Dashboard Styles */
+.dashboard-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.date-selector {
+    display: flex;
+    align-items: center;
+}
+
+.date-selector label {
+    margin-right: 0.5rem;
+    font-weight: bold;
+}
+
+.date-selector select {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+#export-pdf {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#export-pdf:hover {
+    background-color: #219653;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+    gap: 1.5rem;
+}
+
+.dashboard-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    border-top: 4px solid var(--primary-color);
+}
+
+.dashboard-card:nth-child(1) {
+    border-top-color: #f39c12;
+}
+
+.dashboard-card:nth-child(2) {
+    border-top-color: #3498db;
+}
+
+.dashboard-card:nth-child(3) {
+    border-top-color: #9b59b6;
+}
+
+.dashboard-card:nth-child(4) {
+    border-top-color: #16a085;
+}
+
+.dashboard-card h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.chart-container {
+    height: 200px;
+    margin-bottom: 1rem;
+}
+
+.stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.stats p {
+    font-size: 0.9rem;
+}
+
+.stats span {
+    font-weight: bold;
+}
+
+/* Calculator Styles */
+.calculator-container {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.calculator-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed #ddd;
+}
+
+.period-selector {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.period-selector label,
+.custom-period label {
+    font-weight: bold;
+}
+
+.period-selector select,
+.custom-period input {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.custom-period {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#calculate-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: auto;
+}
+
+#calculate-btn:hover {
+    background-color: #1e2b3a;
+}
+
+.results-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+    gap: 1rem;
+}
+
+.result-card {
+    background-color: var(--light-bg);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--secondary-color);
+}
+
+.result-card:nth-child(1) {
+    border-left-color: #f39c12;
+}
+
+.result-card:nth-child(2) {
+    border-left-color: #3498db;
+}
+
+.result-card:nth-child(3) {
+    border-left-color: #9b59b6;
+}
+
+.result-card:nth-child(4) {
+    border-left-color: #16a085;
+}
+
+.result-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.result {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.comparison {
+    font-size: 0.9rem;
+}
+
+/* Reduction Proposals Styles */
+.reduction-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+    gap: 1.5rem;
+}
+
+.reduction-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid var(--secondary-color);
+}
+
+.reduction-card:nth-child(1) {
+    border-left-color: #f39c12;
+}
+
+.reduction-card:nth-child(2) {
+    border-left-color: #3498db;
+}
+
+.reduction-card:nth-child(3) {
+    border-left-color: #9b59b6;
+}
+
+.reduction-card:nth-child(4) {
+    border-left-color: #16a085;
+}
+
+.reduction-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.reduction-card ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.reduction-card li {
+    margin-bottom: 0.5rem;
+}
+
+.savings-estimate {
+    background-color: var(--light-bg);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+/* About Section Styles */
+.about-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.project-description h3,
+.team-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.project-description p,
+.team-info p {
+    margin-bottom: 1.5rem;
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .dashboard-grid,
+    .results-container,
+    .reduction-grid,
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-controls,
+    .calculator-controls {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #calculate-btn {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    .logo-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+}
