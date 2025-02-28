@@ -7,25 +7,72 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body>
     <header>
         <div class="logo-container">
-            <h1>Calculadora de Ahorro Energético</h1>
+            <h1>Calculadora Inteligente de Ahorro</h1>
         </div>
         <nav>
             <ul>
-                <li><a href="#dashboard">Panel</a></li>
-                <li><a href="#calculadora">Calculadora</a></li>
-                <li><a href="#reduccio">Propuestas de Reducción</a></li>
+                <li><a href="#reduccion">Estrategias de Ahorro</a></li>
+                <li><a href="#calculadora">Simulador de Consumo</a></li>
+                <li><a href="#panel">Monitor de Energía</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section id="dashboard" class="section">
-            <h2>Panel de Consumo</h2>
+    <main> 
+        <section id="calculadora" class="section">
+            <h2>Simulador de Consumo</h2>
+            <p>Utiliza nuestra calculadora para predecir el consumo futuro y optimizar el ahorro.</p>
+            <div class="calculator-container">
+                <div class="calculator-controls">
+                    <div class="period-selector">
+                        <label for="prediction-period">Periodo de predicción:</label>
+                        <select id="prediction-period">
+                            <option value="nextYear">Próximo año</option>
+                            <option value="nextCourse">Próximo curso (Set-Jun)</option>
+                            <option value="custom">Personalizado</option>
+                        </select>
+                    </div>
+                    <div class="custom-period" id="custom-period-container" style="display: none;">
+                        <label for="start-date">Fecha de inicio:</label>
+                        <input type="date" id="start-date">
+                        <label for="end-date">Fecha de fin:</label>
+                        <input type="date" id="end-date">
+                    </div>
+                    <button id="calculate-btn">Calcular</button>
+                </div>
+                <div class="results-container">
+                    <div class="result-card">
+                        <h3>Consumo Eléctrico</h3>
+                        <p class="result" id="electric-prediction"></p>
+                        <p class="comparison">Comparación con período actual:<span id="electric-comparison"></span></p>
+                    </div>
+                    <div class="result-card">
+                        <h3>Consumo de Agua</h3>
+                        <p class="result" id="water-prediction"></p>
+                        <p class="comparison">Comparación con período actual:<span id="water-comparison"></span></p>
+                    </div>
+                    <div class="result-card">
+                        <h3>Consumibles de Oficina</h3>
+                        <p class="result" id="office-prediction"></p>
+                        <p class="comparison">Comparación con período actual:<span id="office-comparison"></span></p>
+                    </div>
+                    <div class="result-card">
+                        <h3>Productos de Limpieza</h3>
+                        <p class="result" id="cleaning-prediction"></p>
+                        <p class="comparison">Comparación con período actual:<span id="cleaning-comparison"></span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="dashboard class="section">
+            <h2>Monitor de Energía</h2>
+            <p>Consulta datos detallados sobre el uso de electricidad, agua y otros recursos.</p>
             <div class="dashboard-controls">
                 <div class="date-selector">
                     <label for="date-range">Selecciona un periodo:</label>
@@ -81,54 +128,9 @@
                 </div>
             </div>
         </section>
-
-        <section id="calculadora" class="section">
-            <h2>Calculadora de Predicciones</h2>
-            <div class="calculator-container">
-                <div class="calculator-controls">
-                    <div class="period-selector">
-                        <label for="prediction-period">Periodo de predicción:</label>
-                        <select id="prediction-period">
-                            <option value="nextYear">Próximo año</option>
-                            <option value="nextCourse">Próximo curso (Set-Jun)</option>
-                            <option value="custom">Personalizado</option>
-                        </select>
-                    </div>
-                    <div class="custom-period" id="custom-period-container" style="display: none;">
-                        <label for="start-date">Fecha de inicio:</label>
-                        <input type="date" id="start-date">
-                        <label for="end-date">Fecha de fin:</label>
-                        <input type="date" id="end-date">
-                    </div>
-                    <button id="calculate-btn">Calcular</button>
-                </div>
-                <div class="results-container">
-                    <div class="result-card">
-                        <h3>Consumo Eléctrico</h3>
-                        <p class="result" id="electric-prediction"></p>
-                        <p class="comparison">Comparación con período actual:<span id="electric-comparison"></span></p>
-                    </div>
-                    <div class="result-card">
-                        <h3>Consumo de Agua</h3>
-                        <p class="result" id="water-prediction"></p>
-                        <p class="comparison">Comparación con período actual:<span id="water-comparison"></span></p>
-                    </div>
-                    <div class="result-card">
-                        <h3>Consumibles de Oficina</h3>
-                        <p class="result" id="office-prediction"></p>
-                        <p class="comparison">Comparación con período actual:<span id="office-comparison"></span></p>
-                    </div>
-                    <div class="result-card">
-                        <h3>Productos de Limpieza</h3>
-                        <p class="result" id="cleaning-prediction"></p>
-                        <p class="comparison">Comparación con período actual:<span id="cleaning-comparison"></span></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="reduccio" class="section">
-            <h2>Propuestas de Reducción de Consumo</h2>
+        <section id="reduccion" class="section">
+            <h2>Estrategias de Ahorro Energético</h2>
+            <p>Descubre diversas formas de reducir el consumo de energía y recursos en tu entorno.</p>
             <div class="reduction-grid">
                 <div class="reduction-card">
                     <h3>Reducción del Consumo Eléctrico</h3>
@@ -183,7 +185,7 @@
     </main>
 
     <footer>
-        <p>© 2025 - Calculadora de Ahorro Energético - Grupo 5</p>
+        <p>© 2025 - Calculadora Inteligente de Ahorro - Grupo 5</p>
     </footer>
 
     <script src="scripts/main.js"></script>
