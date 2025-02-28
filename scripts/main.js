@@ -10,11 +10,12 @@ let processedData = {
 // Constants
 const MONTHS = ['Gener', 'Febrer', 'Març', 'Abril', 'Maig', 'Juny', 'Juliol', 'Agost', 'Setembre', 'Octubre', 'Novembre', 'Desembre'];
 const CHART_COLORS = {
-    electric: 'rgba(243, 156, 18, 0.7)',
-    water: 'rgba(52, 152, 219, 0.7)',
-    office: 'rgba(155, 89, 182, 0.7)',
-    cleaning: 'rgba(22, 160, 133, 0.7)'
+    electric: 'rgba(255, 99, 132, 0.7)',   // Rojo
+    water: 'rgba(54, 162, 235, 0.7)',     // Azul brillante
+    office: 'rgba(161, 138, 79, 0.7)',    // Amarillo
+    cleaning: 'rgba(81, 151, 54, 0.7)'   // Verde agua
 };
+
 
 // Charts references
 let electricChart, waterChart, officeChart, cleaningChart;
@@ -337,27 +338,27 @@ function renderOfficeChart() {
     const values = Object.values(data);
 
     // Create chart
-    officeChart = new Chart(ctx, {
-        type: 'pie',
-        data: {
-            labels: labels,
-            datasets: [{
-                data: values,
-                backgroundColor: [
-                    'rgba(155, 89, 182, 0.7)',
-                    'rgba(142, 68, 173, 0.7)',
-                    'rgba(127, 140, 141, 0.7)',
-                    'rgba(116, 185, 255, 0.7)'
-                ],
-                borderColor: [
-                    'rgba(155, 89, 182, 1)',
-                    'rgba(142, 68, 173, 1)',
-                    'rgba(127, 140, 141, 1)',
-                    'rgba(116, 185, 255, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
+officeChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: labels,
+        datasets: [{
+            data: values,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.7)',  // Rojo
+                'rgba(54, 162, 235, 0.7)',  // Azul brillante
+                'rgba(255, 206, 86, 0.7)',  // Amarillo
+                'rgba(75, 192, 192, 0.7)'   // Verde agua
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
         options: {
             responsive: true,
             maintainAspectRatio: false,
@@ -379,24 +380,25 @@ function renderCleaningChart() {
     const labels = Object.keys(data);
     const values = Object.values(data);
 
-    // Create chart
-    cleaningChart = new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-            labels: labels,
-            datasets: [{
-                data: values,
-                backgroundColor: [
-                    'rgba(22, 160, 133, 0.7)',
-                    'rgba(39, 174, 96, 0.7)'
-                ],
-                borderColor: [
-                    'rgba(22, 160, 133, 1)',
-                    'rgba(39, 174, 96, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
+   // Create chart
+cleaningChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: labels,
+        datasets: [{
+            data: values,
+            backgroundColor: [
+                'rgba(255, 159, 64, 0.7)',  // Naranja
+                'rgba(153, 102, 255, 0.7)'  // Morado
+            ],
+            borderColor: [
+                'rgba(255, 159, 64, 1)',
+                'rgba(153, 102, 255, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+
         options: {
             responsive: true,
             maintainAspectRatio: false,
