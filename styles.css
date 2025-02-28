@@ -12,10 +12,17 @@
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', Arial, sans-serif;  /* Cambié la fuente a Roboto, que es moderna y legible */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Comfortaa', Arial, sans-serif;
+    }
+    
+    body {
+        font-family: 'Comfortaa', sans-serif;
+    }
+      /* Cambié la fuente a Roboto, que es moderna y legible */
 }
 
 body {
@@ -23,7 +30,30 @@ body {
     color: var(--text-color);
     line-height: 1.6;
 }
+/* Añadir barras laterales verdes */
+body {
+    position: relative;
+    overflow-x: hidden;
+}
 
+body::before,
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px; /* Ancho de las barras laterales */
+    background-color: #2d6a4f; /* Color de las barras laterales */
+    z-index: 1000; /* Asegura que las barras estén por encima del contenido */
+}
+
+body::before {
+    left: 0;
+}
+
+body::after {
+    right: 0;
+}
 
 
 /* Header Styles */
