@@ -8,7 +8,7 @@ let processedData = {
 };
 
 // Constants
-const MONTHS = ['Gener', 'Febrer', 'Març', 'Abril', 'Maig', 'Juny', 'Juliol', 'Agost', 'Setembre', 'Octubre', 'Novembre', 'Desembre'];
+const MONTHS = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
 const CHART_COLORS = {
     electric: 'rgba(235, 232, 79, 0.87)',   // Amarillow
     water: 'rgba(54, 162, 235, 0.7)',     // Azul brillante
