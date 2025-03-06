@@ -221,7 +221,7 @@ function renderElectricChart() {
             data: {
                 labels: [],
                 datasets: [{
-                    label: 'Consum Elèctric (kWh)',
+                    label: 'Consumo Eléctrico (kWh)',
                     data: [],
                     backgroundColor: CHART_COLORS.electric,
                     borderColor: CHART_COLORS.electric.replace('0.7', '1'),
@@ -246,7 +246,7 @@ function renderElectricChart() {
         data: {
             labels: labels,
             datasets: [{
-                label: 'Consum Elèctric (kWh)',
+                label: 'Consumo Eléctrico (kWh)',
                 data: values,
                 backgroundColor: CHART_COLORS.electric,
                 borderColor: CHART_COLORS.electric.replace('0.7', '1'),
@@ -282,7 +282,7 @@ function renderWaterChart() {
             data: {
                 labels: [],
                 datasets: [{
-                    label: 'Consum d\'Aigua (m³)',
+                    label: 'Consumo de Agua (m³)',
                     data: [],
                     backgroundColor: CHART_COLORS.water,
                     borderColor: CHART_COLORS.water.replace('0.7', '1'),
@@ -307,7 +307,7 @@ function renderWaterChart() {
         data: {
             labels: labels,
             datasets: [{
-                label: 'Consum d\'Aigua (m³)',
+                label: 'Consumo de Agua (m³)',
                 data: values,
                 backgroundColor: CHART_COLORS.water,
                 borderColor: CHART_COLORS.water.replace('0.7', '1'),
