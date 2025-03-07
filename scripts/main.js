@@ -39,7 +39,7 @@ async function loadData() {
         calculateSavingsEstimates();
     } catch (error) {
         console.error('Error loading data:', error);
-        alert('Hi ha hagut un error carregant les dades. Si us plau, torna a intentar-ho més tard.');
+        //alert('Hi ha hagut un error carregant les dades. Si us plau, torna a intentar-ho més tard.');
     }
 }
 
