@@ -8,7 +8,7 @@ let processedData = {
 };
 
 // Constants
-const MONTHS = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+const MONTHS = ['Gener', 'Febrer', 'Març', 'Abril', 'Maig', 'Juny', 'Juliol', 'Agost', 'Setembre', 'Octubre', 'Novembre', 'Desembre'];
 const CHART_COLORS = {
     electric: 'rgba(235, 232, 79, 0.87)',   // Amarillow
     water: 'rgba(54, 162, 235, 0.7)',     // Azul brillante
@@ -39,7 +39,7 @@ async function loadData() {
         calculateSavingsEstimates();
     } catch (error) {
         console.error('Error loading data:', error);
-        //alert('Hi ha hagut un error carregant les dades. Si us plau, torna a intentar-ho més tard.');
+        alert('Hi ha hagut un error carregant les dades. Si us plau, torna a intentar-ho més tard.');
     }
 }
 
@@ -221,7 +221,7 @@ function renderElectricChart() {
             data: {
                 labels: [],
                 datasets: [{
-                    label: 'Consumo Eléctrico (kWh)',
+                    label: 'Consum Elèctric (kWh)',
                     data: [],
                     backgroundColor: CHART_COLORS.electric,
                     borderColor: CHART_COLORS.electric.replace('0.7', '1'),
@@ -246,7 +246,7 @@ function renderElectricChart() {
         data: {
             labels: labels,
             datasets: [{
-                label: 'Consumo Eléctrico (kWh)',
+                label: 'Consum Elèctric (kWh)',
                 data: values,
                 backgroundColor: CHART_COLORS.electric,
                 borderColor: CHART_COLORS.electric.replace('0.7', '1'),
@@ -282,7 +282,7 @@ function renderWaterChart() {
             data: {
                 labels: [],
                 datasets: [{
-                    label: 'Consumo de Agua (m³)',
+                    label: 'Consum d\'Aigua (m³)',
                     data: [],
                     backgroundColor: CHART_COLORS.water,
                     borderColor: CHART_COLORS.water.replace('0.7', '1'),
@@ -307,7 +307,7 @@ function renderWaterChart() {
         data: {
             labels: labels,
             datasets: [{
-                label: 'Consumo de Agua (m³)',
+                label: 'Consum d\'Aigua (m³)',
                 data: values,
                 backgroundColor: CHART_COLORS.water,
                 borderColor: CHART_COLORS.water.replace('0.7', '1'),
